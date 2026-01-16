@@ -1,0 +1,10 @@
+{
+  "name": "pulsechat-ui",
+  "version": "1.0.0",
+  "description": "PulseChat roleplay UI preview server",
+  "private": true,
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  }
+}

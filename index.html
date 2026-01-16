@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PulseChat — Roleplay Companion Platform</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="top-bar">
+        <div class="brand">
+          <span class="logo">⚡</span>
+          <div>
+            <h1>PulseChat</h1>
+            <p>Open-roleplay platform for immersive character chats.</p>
+          </div>
+        </div>
+        <nav class="nav">
+          <button class="nav-btn active" data-view="explore">Explore</button>
+          <button class="nav-btn" data-view="profile">Bot Profile</button>
+          <button class="nav-btn" data-view="threads">Chat Threads</button>
+          <button class="nav-btn" data-view="moderation">Moderation Log</button>
+        </nav>
+      </header>
+
+      <section class="policy-banner">
+        <div>
+          <h2>Open Creative Space</h2>
+          <p>
+            PulseChat welcomes adult consensual roleplay and expressive language. We only block
+            clearly illegal or high-risk content. For sensitive topics, we provide warnings and
+            give you control.
+          </p>
+        </div>
+        <div class="policy-tags">
+          <span>18+ Roleplay Friendly</span>
+          <span>Creator-First</span>
+          <span>Contextual Warnings</span>
+        </div>
+      </section>
+
+      <main>
+        <section class="view active" id="explore">
+          <div class="explore-header">
+            <div>
+              <h2>Explore Bots</h2>
+              <p>Trending personas crafted for rich storytelling and longform chats.</p>
+            </div>
+            <div class="search">
+              <input type="text" id="searchInput" placeholder="Search bots, tags, themes..." />
+              <button id="randomPick">Surprise me</button>
+            </div>
+          </div>
+          <div class="filters">
+            <button class="chip active" data-filter="all">All</button>
+            <button class="chip" data-filter="romance">Romance</button>
+            <button class="chip" data-filter="fantasy">Fantasy</button>
+            <button class="chip" data-filter="sci-fi">Sci-Fi</button>
+            <button class="chip" data-filter="chaos">Chaotic</button>
+            <button class="chip" data-filter="comfort">Comfort</button>
+          </div>
+          <div class="bot-grid" id="botGrid"></div>
+        </section>
+
+        <section class="view" id="profile">
+          <div class="profile-layout">
+            <div class="profile-card" id="profileCard"></div>
+            <aside class="profile-side">
+              <h3>Quick Start</h3>
+              <ul>
+                <li>Switch tone with /mood tags (e.g. /mood intimate)</li>
+                <li>Use {{settings}} to fine-tune pacing</li>
+                <li>Longform memory enabled</li>
+              </ul>
+              <button id="startChat">Start chat with this bot</button>
+            </aside>
+          </div>
+        </section>
+
+        <section class="view" id="threads">
+          <div class="threads-layout">
+            <aside class="thread-list" id="threadList"></aside>
+            <section class="chat-panel">
+              <header id="chatHeader"></header>
+              <div class="chat-body" id="chatBody"></div>
+              <div class="chat-input">
+                <textarea id="chatInput" rows="3" placeholder="Send a message..."></textarea>
+                <div class="chat-actions">
+                  <span class="hint">Contextual moderation keeps the space safe without killing the vibe.</span>
+                  <button id="sendBtn">Send</button>
+                </div>
+              </div>
+            </section>
+          </div>
+        </section>
+
+        <section class="view" id="moderation">
+          <h2>Moderation Events</h2>
+          <p class="muted">Local-only logs for debugging moderation decisions.</p>
+          <div class="moderation-log" id="moderationLog"></div>
+        </section>
+      </main>
+    </div>
+
+    <div class="modal" id="warningModal" aria-hidden="true">
+      <div class="modal-card">
+        <h3 id="warningTitle">Content warning</h3>
+        <p id="warningText"></p>
+        <div class="modal-actions">
+          <button class="secondary" id="cancelWarning">Cancel</button>
+          <button id="continueWarning">Continue</button>
+        </div>
+        <p class="modal-note" id="warningNote"></p>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
